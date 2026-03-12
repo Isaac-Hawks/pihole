@@ -7,14 +7,13 @@ services:
 
     network_mode: host
 
-    env_file:
-      - .env
+#   env_file:
+#     - .env
 
     environment:
-      TZ: ${TZ}
-      WEBPASSWORD: ${WEBPASSWORD}
-      PIHOLE_DNS: "${PIHOLE_DNS_1};${PIHOLE_DNS_2}"
-      DNSMASQ_LISTENING: ${DNSMASQ_LISTENING}
+      TZ: America/New_York # ${TZ}
+      FTLCONF_webserver_api_password: 'password' # CHANGE this
+      FTLCONF_dns_listeningMode: 'ALL'
 
     volumes:
       - ./data/pihole:/etc/pihole
