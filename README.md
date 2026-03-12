@@ -6,7 +6,7 @@ run: `sudo nano /etc/resolv.conf` and add these lines near the bottom, but befor
 nameserver 127.0.0.1
 options timeout:1 attempts:2
 ```
-When you scroll down past all the commented out parts of `/etc/resolv.conf`, it should look sommething like this:
+When you scroll down past all the commented out parts of `/etc/resolv.conf`, it should look something like this:
 ```
 nameserver 127.0.0.1
 options timeout:1 attempts:2
