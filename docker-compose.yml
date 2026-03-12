@@ -1,0 +1,24 @@
+services:
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    hostname: pihole
+    restart: unless_stopped
+
+    network_mode: host
+
+    env_file:
+      - .env
+
+    environment:
+      TZ: ${TZ}
+      WEBPASSWORD: ${WEBPASSWORD}
+      PIHOLE_DNS: "${PIHOLE_DNS_1};${PIHOLE_DNS_2}"
+      DNSMASQ_LISTENING: ${DNSMASQ_LISTENING}
+
+    volumes:
+      - ./data/pihole:/etc/pihole
+      - ./data/dnsmasq:/etc/dnsmasq.d
+
+    cap_add:
+      - NET_ADMIN
