@@ -73,6 +73,6 @@ nameserver 192.168.1.1
 nameserver 2603:6011:8900:e26c::1
 ```
 ## Important!
-After you restart your computer, you will need to do the steps above again, as it reverts back to normal after a restart. 
-After the first login, go to Tools > Update Gravity, and click Update. This pulls the latest ad-block lists.
+* After you restart your computer, you will need to do the steps above again, as it reverts back to normal after a restart.
+* After the first login, go to Tools > Update Gravity, and click Update. This pulls the latest ad-block lists.
 
