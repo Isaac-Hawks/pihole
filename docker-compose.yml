@@ -2,22 +2,28 @@ services:
   pihole:
     image: pihole/pihole:latest
     container_name: pihole
-    hostname: pihole
-    restart: unless_stopped
-
-    network_mode: host
-
-#   env_file:
-#     - .env
+    hostname: pihole-dns
+    ports: 
+      # DNS Ports - Bound to local loopback only
+      - "127.0.0.1:53:53/tcp"
+      - "127.0.0.1:53:53/udp"
+      # Web Interface - Default HTTP port
+      - "127.0.0.1:8080:80/tcp"
+      
+    env_file:
+      - .env
 
     environment:
-      TZ: America/New_York # ${TZ}
-      FTLCONF_webserver_api_password: 'password' # CHANGE this
-      FTLCONF_dns_listeningMode: 'ALL'
+      TZ: ${TZ:-UTC} 
+      FTLCONF_webserver_api_password: ${PASSWORD} # CHANGE this in the .env file 
+      FTLCONF_database_maxDBdays: 7 # This is how long query logs are stored. The default is 365 days
+      FTLCONF_privacy_level: ${Privacy_level} # Default is 0
+      FTLCONF_dns_listeningMode: local 
 
     volumes:
       - ./data/pihole:/etc/pihole
       - ./data/dnsmasq:/etc/dnsmasq.d
 
+    restart: unless-stopped
     cap_add:
       - NET_ADMIN
