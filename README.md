@@ -22,6 +22,8 @@ sudo apt-get update
 sudo apt-get install docker.io docker-compose -y
 
 ```
+> Important! make sure to change the password in the .env file before running this command.
+
 After you have docker installed, you have to start the container in the pihole directory:
 `sudo docker-compose up -d`
 Note: If this is your first time doing this, docker will need to download the pihole image.
