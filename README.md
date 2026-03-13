@@ -1,6 +1,6 @@
 # Local Pihole DNS Server
 This is a DNS server meant to block ad traffic at the host-level.  
-With this, you can finally say goodbye do ads!
+With this, you can finally say goodbye to ads!
 
 ## Requirements
 - linux (any distro that supports docker)
