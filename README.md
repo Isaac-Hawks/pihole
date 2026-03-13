@@ -3,7 +3,7 @@ This is a DNS server meant to block ad traffic at the host-level.
 With this, you can finally say goodbye do ads!
 
 ## Requirements
-- Kali/ChromeOS based systems
+- linux (any distro that supports docker)
 - Docker
 - Docker Compose
 - Internet Connection (for downloading the pihole image and routing )
