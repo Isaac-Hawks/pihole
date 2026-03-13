@@ -38,7 +38,7 @@ Note: If this is your first time doing this, docker will need to download the pi
 
 ## Accessing your server
 If you are accessing the pihole webpager from your host machine, then you will need to navigate to http://127.0.0.1:8080.  
-Otherwise, if you are accessing it from a different device, go to http://<your-ip-address>:8080
+Otherwise, if you are accessing it from a different device, go to http://[your-ip-address]:8080
 * To find your ip address, run `hostname -I | awk '{print $1}'` on the machine hosting your pihole DNS server
 
 # Folder Structure
